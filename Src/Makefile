@@ -1,20 +1,20 @@
 all: item.o AVL.o set.o main.o
-	gcc item.o AVL.o set.o main.o -o teste -std=c99 -Wall -g
+	gcc -g item.o AVL.o set.o main.o -o exec -std=c99 -Wall -g; make clean
 
 item.o:
-	gcc -c item.c -o item.o -g
+	gcc -g -c item.c -o item.o -g
 
 AVL.o:
-	gcc -c AVL.c -o AVL.o -g
+	gcc -g -c AVL.c -o AVL.o -g
 	 
 set.o:
-	gcc -c set.c -o set.o -g
+	gcc -g -c set.c -o set.o -g
 
 main.o:
-	gcc -c main.c -o main.o -g
+	gcc -g -c main.c -o main.o -g
 	 
 clean:
-	rm *.o teste
+	rm *.o
 
 run:
-	./teste
+	valgrind ./exec < ../TestCases/2.in
