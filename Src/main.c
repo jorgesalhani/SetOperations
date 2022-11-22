@@ -11,31 +11,39 @@ int main(int argc, char *argv[])
   A = set_criar();
   B = set_criar();
 
-  scanf("%d %d", &n_a, &n_b);
+  n_a = 5;
+  n_b = 3;
+  int setA[5] = {1, 2, 3, 4, 5};
+  int setB[3] = {7, 2, 8};
+  
+  op = 1;
+
+  // scanf("%d %d", &n_a, &n_b);
 
   for(int i=0; i<n_a; i++){
-    scanf("%d",&x);
-    set_inserir(A, x);
+    // scanf("%d",&x);
+    set_inserir(A, setA[i]);
 
   }
 
   for(int i=0; i<n_b; i++){
-    scanf("%d",&x);
-    set_inserir(B, x);
+    // scanf("%d",&x);
+    set_inserir(B, setB[i]);
 
   }
 
-  scanf("%d", &op);
+  // scanf("%d", &op);
   
   switch(op){
     case 1: {
-              // int num;
+              int num;
+              num = 6;
               // scanf("%d", &num);
-              // if(set_pertence(A,num)) 
-              //   printf("Pertence.");
-              // else
-              //   printf("Não Pertence.");
-              // break;
+              if(set_pertence(A,num)) 
+                printf("Pertence.");
+              else
+                printf("Não Pertence.");
+              break;
     }
     case 2: {
               SET *C = set_uniao(A,B);

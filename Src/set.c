@@ -82,3 +82,11 @@ SET *set_interseccao(SET *conjunto_A, SET *conjunto_B){
 
     return NULL;
 }
+
+bool set_pertence(SET* conjunto, int elemento) {
+    if (conjunto == NULL) return false;
+    ITEM* item = item_criar(elemento);
+    bool pertence = AVL_pertence(conjunto->arvore, item);
+    item_apagar(&item);
+    return pertence;
+}

@@ -325,3 +325,12 @@ void AVL_interseccao_no(AVL *interseccao, AVL *arvore_B, NO *raiz){
         AVL_interseccao_no(interseccao, arvore_B, raiz->direita);
     }  
 }
+
+bool AVL_pertence_no(AVL* arvore_A, ITEM* item) {
+    return (AVL_busca(arvore_A, item) != NULL ? true : false);
+}
+
+bool AVL_pertence(AVL* arvore_A, ITEM* item) {
+    if (arvore_A == NULL) return false;
+    return AVL_pertence_no(arvore_A, item);
+}
