@@ -132,7 +132,9 @@ NO * avl_inserir_no(NO * raiz, ITEM * item){
 }
 
 bool AVL_inserir(AVL * avl, ITEM * item){
-    return ((avl->raiz = avl_inserir_no(avl->raiz, item)) != NULL);
+    if(AVL_busca(avl, item) == NULL) // Verifica se o elemente já existe
+        return ((avl->raiz = avl_inserir_no(avl->raiz, item)) != NULL);
+    return false;
 }
 
 void troca_max_esq(NO * troca, NO * raiz, NO * ant){
@@ -324,13 +326,4 @@ void AVL_interseccao_no(AVL *interseccao, AVL *arvore_B, NO *raiz){
         AVL_interseccao_no(interseccao, arvore_B, raiz->esquerda);
         AVL_interseccao_no(interseccao, arvore_B, raiz->direita);
     }  
-}
-
-bool AVL_pertence_no(AVL* arvore_A, ITEM* item) {
-    return (AVL_busca(arvore_A, item) != NULL ? true : false);
-}
-
-bool AVL_pertence(AVL* arvore_A, ITEM* item) {
-    if (arvore_A == NULL) return false;
-    return AVL_pertence_no(arvore_A, item);
 }

@@ -1,8 +1,6 @@
 #include "set.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-
 
 int main(int argc, char *argv[])
 {
@@ -29,27 +27,25 @@ int main(int argc, char *argv[])
 
   scanf("%d", &op);
   
-  clock_t tic = clock();
-  
   switch(op){
     case 1: {
       int num;
       scanf("%d", &num);
       if(set_pertence(B,num)) 
-        // printf("Pertence.");
-      // else
-        // printf("Não Pertence.");
+        printf("Pertence.");
+      else
+        printf("Não Pertence.");
       break;
     }
     case 2: {
       SET *C = set_uniao(A,B);
-      // set_imprimir(C);
+      set_imprimir(C);
       set_apagar(&C);
       break;
     }
     case 3: {
       SET *C = set_interseccao(A, B);
-      // set_imprimir(C);
+      set_imprimir(C);
       set_apagar(&C);
       break;
     }
@@ -57,12 +53,12 @@ int main(int argc, char *argv[])
       int num;
       scanf("%d", &num);
       set_remover(A,num);
-      // set_imprimir(A); 
+      set_imprimir(A); 
+    }
+    case 5: { 
+      set_imprimir(A); 
     }
   }
-  clock_t toc = clock();
-  printf("%d,%d,%d,%f\n", n_a, n_b, op, (double)(toc - tic) / CLOCKS_PER_SEC);
-
 
   set_apagar(&A);
   set_apagar(&B);

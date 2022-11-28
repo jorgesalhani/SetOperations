@@ -23,6 +23,5 @@ void AVL_em_ordem(AVL *arvore);
 
 AVL *AVL_uniao(AVL *arvore_A, AVL *arvore_B); // Cria uma árvore contendo a união dos elementos de duas árvores.
 AVL *AVL_interseccao(AVL *arvore_A, AVL *arvore_B); // Cria uma árvore contendo a intersecção dos elementos de duas árvores.
-bool AVL_pertence(AVL *arvoce_A, ITEM *item); // Retorna caso um elemento buscado pertence ou não à árvore
 
 #endif
