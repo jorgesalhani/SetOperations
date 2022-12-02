@@ -226,7 +226,7 @@ ITEM *AVL_busca(AVL *arvore, ITEM * item){
 void AVL_em_ordem_no(NO * no){
     if(no != NULL){
         AVL_em_ordem_no(no->esquerda);
-        printf("%d ", item_get_chave(no->item));
+        printf("%d, ", item_get_chave(no->item));
         AVL_em_ordem_no(no->direita);
     }
 
