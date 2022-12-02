@@ -1,3 +1,27 @@
+/**
+ * @author Kayky Pimentel de Sena
+ * @author Miller Matheus Lima Anacleto Rocha
+ * @author Jorge Augusto Salgado Salhani
+ * 
+ * @brief Armazenamento e operações de conjuntos (uso TAD AVL)
+ * 
+ * Codigo cliente para armazenamento e execução de operações
+ * sobre conjuntos A e B compostos por números naturais utilizando
+ * TAD árvore AVL para representação e operação.
+ * 
+ * Operações: 
+ *  1. x pertence a B
+ *  2. A uniao B
+ *  3. A interseccao B
+ *  4. A - x (remocao)
+ *  5. imprimir A
+ * 
+ * Projeto 2 - Algoritmo e Estrutura de Dados I
+ * Grupo 5
+ * 
+ * Prof. Rudinei Goularte
+*/
+
 #include "set.h"
 #include <stdio.h>
 #include <stdlib.h>
